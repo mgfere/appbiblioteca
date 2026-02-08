@@ -1,0 +1,685 @@
+
+:root {
+    --primary-green: #1ab192;
+    --primary-green-dark: rgba(38, 202, 169, 0.77);
+    --primary-green-darker: #066854;
+    --primary-green-light: #0bbd99;
+    --white: #ffffff;
+    --gray-light: #f8f9fa;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 6px 25px rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estilos generales para el header */
+.header--menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+/* Efecto al hacer scroll */
+.header--menu.scrolled {
+    height: 60px;
+    box-shadow: var(--shadow-hover);
+    background: #0ecea8ae !important;
+}
+
+/* Logo dentro del header */
+.header--menu .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.header--menu .logo:hover {
+    transform: scale(1.05);
+}
+
+.header--menu .logo img {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    object-fit: contain;
+    max-width: 200px;
+}
+
+/* Contenedor del menú de navegación */
+.header--menu nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+/* Lista del menú */
+.header--menu .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 2px;
+}
+
+/* Ítems del menú */
+.header--menu .menu li {
+    position: relative !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+    overflow: visible;
+}
+
+/* Eleva el li activo con submenu por encima de los demás */
+.header--menu .menu li.has-submenu:hover,
+.header--menu .menu li.has-submenu:focus-within {
+    z-index: 3000 !important;
+}
+
+.header--menu .menu li:not(.logout)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: var(--border-radius);
+}
+
+.header--menu .menu li:hover::before {
+    opacity: 1;
+}
+
+.header--menu .menu li:hover {
+    background: rgba(255, 255, 255, 0.224);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+    /* Estilos para página actual - Desktop */
+.header--menu .menu > li.current-page::after,
+.header--menu .menu > li.active::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    height: 25px;
+    background: #ffffff87;
+    border-radius: 3px 3px 0 0;
+    z-index: 3;
+    opacity: 0.95;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+
+/* Elimina el subrayado de los submenús */
+.header--menu .menu .submenu li.current-page::after,
+.header--menu .menu .submenu li.active::after {
+    display: none !important;
+}
+
+/* Fondo activo para el item principal */
+.header--menu .menu > li.current-page,
+.header--menu .menu > li.active {
+    background: rgba(37, 188, 158, 0.681);
+    position: relative;
+}
+
+/* Resalta la opción activa del submenú con color de texto o fondo */
+.header--menu .menu .submenu li.current-page > a,
+.header--menu .menu .submenu li.active > a {
+    color: #09c1ff;
+    background: rgba(9, 167, 135, 0.10);
+    border-radius: 4px;
+}
+
+/* Enlaces del menú */
+.header--menu .menu li a {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 100;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    height: 100%;
+    padding: 0 16px;
+    position: relative;
+    z-index: 2;
+    transition: var(--transition);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+}
+
+.header--menu .menu li a:hover {
+    color: var(--white);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.186);
+}
+
+.header--menu .menu li a i {
+    font-size: 1rem;
+    transition: var(--transition);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    min-width: 16px;
+}
+
+.header--menu .menu li:hover a i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 4px rgba(65, 65, 65, 0.2));
+}
+
+.header--menu .menu li a span {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.3px;
+    transition: var(--transition);
+}
+
+/* Indicador de submenú */
+.header--menu .menu li.has-submenu > a::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    font-size: 12px;
+}
+
+.header--menu .menu li.has-submenu:hover > a::after {
+    transform: rotate(180deg);
+}
+
+/* Submenús - Versión escrotortio */
+.header--menu .submenu {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background: #fff !important;
+    min-width: 200px;
+    box-shadow: var(--shadow-hover);
+    border-radius: var(--border-radius);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    z-index: 2000;
+    overflow: hidden;
+    border: 1px solid rgba(9, 167, 135, 0.1);
+}
+
+.header--menu .menu li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header--menu .submenu li {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    margin: 0;
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+    color:#056651;
+}
+
+.header--menu .submenu li:hover {
+    background: rgba(9, 167, 135, 0.1);
+    transform: none;
+    box-shadow: none;
+}
+
+.header--menu .submenu li::before {
+    display: none;
+}
+
+.header--menu .submenu li a {
+    color: var(--primary-green) !important;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(9, 167, 135, 0.1);
+    text-shadow: none;
+    border-radius: 0;
+    height: auto;
+}
+
+.header--menu .submenu li:last-child a {
+    border-bottom: none;
+}
+
+.header--menu .submenu li a:hover {
+    color: var(--primary-green-dark);
+    background: rgba(9, 167, 135, 0.05);
+    padding-left: 25px;
+}
+
+.header--menu .submenu li a i {
+    color: var(--primary-green);
+    font-size: 14px;
+    min-width: 18px;
+}
+
+/* Botón de logout */
+.header--menu .menu .logout {
+    position: static;
+    margin-left: 15px;
+    background: #1ab192;
+    overflow: hidden;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.header--menu .menu .logout::before {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.header--menu .menu .logout:hover {
+    background: rgba(56, 240, 203, 0.1);
+}
+
+.header--menu .menu .logout a {
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 23px;
+    color: var(--white) !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header--menu .menu .logout a i {
+    font-size: 14px;
+    animation: pulse 2s infinite;
+    color: var(--white) !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Botón de hamburguesa para version patalla chica */
+.menu-toggle {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 8px 12px;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+
+.menu-toggle i {
+    transition: var(--transition);
+}
+
+/* Contenido principal */
+.main--content {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: margin-top 0.3s ease;
+    margin-top: 10px;
+}
+
+.main--content.scrolled {
+    margin-top: 60px;
+}
+
+/* Efectos de animación para la carga */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header--menu {
+    animation: slideDown 0.5s ease-out;
+}
+
+/* COMPORTAMIENTO RESPONSIVE */
+@media (max-width: 991px) {
+    .header--menu.scrolled {
+        background: linear-gradient(135deg, #4ef3d1 0%, #b2f7e7 100%) !important;
+    }
+    .header--menu {
+        padding: 0 15px;
+        justify-content: space-between;
+        background: linear-gradient(135deg, #09a787 0%, #0bbd99 100%) !important;
+    }
+
+    .header--menu .submenu {
+    position: static !important;
+    background: rgba(9, 167, 135, 0.9); /* Verde sólido */
+    }
+
+    /* Menú overlay  */
+    .header--menu nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, #09a787 0%, #0bbd99 100%) !important;
+        transition: left 0.3s ease-out;
+        z-index: 2500;
+        display: flex;
+        flex-direction: column;
+        padding-top: 60px;
+        overflow-y: auto;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .header--menu nav.active {
+        left: 0;
+    }
+
+    /* Botón de hamburguesa */
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 12px;
+        right: 15px;
+        z-index: 3000;
+        color: var(--white);
+        background: transparent;
+        border: none;
+        font-size: 1.2rem;
+        padding: 5px 8px;
+    }
+
+    /* Estructura del menú principal */
+    .header--menu .menu {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        padding: 0;
+        gap: 0;
+        height: auto;
+    }
+
+    .header--menu .menu li {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        position: relative;
+        transform: none;
+        box-shadow: none;
+        border-radius: 0;
+        display: block;
+        color: #fff;
+    }
+
+    .header--menu .menu li:hover {
+        background: rgba(255, 255, 255, 0.087);
+        transform: none;
+        box-shadow: none;
+    }
+
+    .header--menu .menu li::before {
+        display: none;
+    }
+
+    .header--menu .menu li a {
+        padding: 15px 20px;
+        font-size: 14px;
+        color: var(--white); 
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: auto;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0;
+        font-weight: 100;
+    }
+
+    .header--menu .menu li a:hover {
+        background: rgba(255, 255, 255, 0.26);
+        color: #056651; 
+    }
+
+    .header--menu .menu li a i {
+        font-size: 16px;
+    }
+
+    /* Estados activos para móvil */
+    .header--menu .menu li.current-page,
+    .header--menu .menu li.active {
+        background: rgba(255, 255, 255, 0.076);
+        border-left: 4px solid #0bbd99;
+        position: relative;
+    }
+
+    .header--menu .menu li.current-page::after,
+    .header--menu .menu li.active::after {
+        display: none !important;
+    }
+
+    .header--menu .menu li.current-page > a,
+    .header--menu .menu li.active > a {
+        background: rgba(255, 255, 255, 0.041);
+        color: #056651;
+        font-weight: 600;
+    }
+
+    .header--menu .menu li.current-page > a i,
+    .header--menu .menu li.active > a i {
+        color: #056651;
+    }
+
+    /* SUBMENÚ*/
+    .header--menu .submenu {
+        position: static !important;
+        background: rgba(240, 255, 250, 0.2); 
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transform: none;
+        transition: all 0.3s ease;
+        border: none;
+        /* Borde superior suave para separar del menú principal */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header--menu .menu li.has-submenu.active .submenu {
+        opacity: 1;
+        visibility: visible;
+        max-height: 400px;
+        padding: 8px 0;
+    }
+
+    /* Estilos para los enlaces del submenú móvil */
+    .header--menu .submenu li {
+        width: 100%;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        border-left: none;
+    }
+
+    .header--menu .submenu li a {
+        padding: 10px 20px 10px 45px;
+        font-size: 13px;
+        /* Color de texto más oscuro para mejor legibilidad en el submenú */
+        color: #056651; /* Un verde oscuro legible */
+        /* Borde inferior muy suave */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background: transparent;
+        transition: all 0.2s ease;
+        font-weight: 400;
+        border-radius: 0;
+    }
+
+    .header--menu .submenu li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Efectos hover/active para móvil */
+    .header--menu .submenu li a:hover,
+    .header--menu .submenu li a:active {
+        /* Fondo más sutil y texto en verde más vibrante al pasar el ratón */
+        background: rgba(240, 255, 250, 0.4);
+        color: #0bbd99; /* El verde de la universidad */
+        padding-left: 55px;
+    }
+
+    /* Estados activos para submenús móviles */
+    .header--menu .submenu li.current-page,
+    .header--menu .submenu li.active {
+        /* Fondo y borde para el elemento activo del submenú */
+        background: rgba(240, 255, 250, 0.3);
+        border-left: 3px solid #0bbd99;
+    }
+
+    .header--menu .submenu li.current-page > a,
+    .header--menu .submenu li.active > a {
+        /* Texto más oscuro y en negrita para el elemento activo del submenú */
+        background: rgba(240, 255, 250, 0.2);
+        color: #056651;
+        font-weight: 600;
+    }
+
+    .header--menu .submenu li.current-page::after,
+    .header--menu .submenu li.active::after {
+        display: none !important;
+    }
+
+    /* Flecha indicadora mejorada */
+    .header--menu .has-submenu > a::after {
+        content: '\f054';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: auto;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        color: var(--white); /* Se mantiene blanco para contraste con el verde del menú */
+    }
+
+    .header--menu .has-submenu.active > a::after {
+        transform: rotate(90deg);
+    }
+
+    /* Desactivar hover en móvil */
+    .header--menu .menu li:hover .submenu {
+        opacity: 0;
+        visibility: hidden;
+        transform: none;
+    }
+
+    /* Botón de logout móvil */
+    .header--menu .menu .logout {
+        margin: 15px 20px;
+        background: #1ab192; /* Se mantiene el rojo original para el logout */
+        width: calc(100% - 40px);
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: none;
+    }
+
+    .header--menu .menu .logout a {
+        justify-content: center;
+        border-bottom: none;
+        padding: 0 20px;
+        color: var(--white) !important;
+        font-weight: 600;
+    }
+
+    .header--menu .menu .logout a i {
+        color: var(--white) !important;
+    }
+
+    /* Overlay para cerrar menú */
+    .header--menu nav.active::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.3); /* Un overlay más suave */
+        z-index: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .header--menu {
+        height: 50px;
+    }
+
+    .header--menu .logo img {
+        height: 30px;
+    }
+
+    .menu-toggle {
+        top: 8px;
+        right: 10px;
+        font-size: 1.1rem;
+    }
+
+    .header--menu nav {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header--menu nav {
+        width: 90%;
+    }
+}

@@ -1,0 +1,254 @@
+/* Estilos para el formulario de datos personales */
+.book-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #f0f0f0;
+}
+
+.book-form h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+}
+
+.book-form h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #09a787;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid del formulario */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Grupos de formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"] {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #09a787;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(9, 167, 135, 0.1);
+}
+
+.form-group input[type="text"]:hover {
+    border-color: #09a787;
+}
+
+/* Botón principal */
+.btnAceptado {
+    background: linear-gradient(135deg, #09a787, #078a6f);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    min-width: 250px;
+    box-shadow: 0 4px 12px rgba(9, 167, 135, 0.3);
+}
+
+.btnAceptado:hover {
+    background: linear-gradient(135deg, #078a6f, #066b59);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(9, 167, 135, 0.4);
+}
+
+.btnAceptado:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(9, 167, 135, 0.3);
+}
+
+/* Botón de volver */
+.btnAgregar {
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btnAgregar:hover {
+    background: linear-gradient(135deg, #5a6268, #495057);
+    transform: translateY(-1px);
+}
+
+/* Alertas de error */
+.alerta {
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.alerta.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.form-group .alerta.error {
+    margin-top: 5px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+/* Contenedor principal */
+.tabular--wrapper {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.tabular--botones {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.table--container {
+    background: transparent;
+    padding: 0;
+}
+
+/* Input oculto para bookId */
+input[type="hidden"] {
+    display: none;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+    .book-form {
+        padding: 25px;
+        margin: 0 15px;
+    }
+    
+    .btnAceptado {
+        min-width: 200px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .book-form {
+        padding: 20px 15px;
+    }
+    
+    .book-form h1 {
+        font-size: 20px;
+    }
+    
+    .form-group input[type="text"] {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .btnAceptado {
+        min-width: 180px;
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+    
+    .tabular--wrapper {
+        padding: 15px;
+    }
+}
+
+/* Animación de entrada */
+.book-form {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estados de validación visual */
+.form-group input[type="text"].error {
+    border-color: #dc3545;
+    background-color: #fff5f5;
+}
+
+.form-group input[type="text"].success {
+    border-color: #28a745;
+    background-color: #f8fff9;
+}
+
+/* Mejoras de accesibilidad */
+.form-group input[type="text"]:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+/* Hover effects para mejor UX */
+.tabular--wrapper:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}

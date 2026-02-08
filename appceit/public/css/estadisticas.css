@@ -1,0 +1,303 @@
+/* CSS PARA CONTENEDORES BONITOS DE INFORMACIÓN Y GRÁFICAS */
+
+/* CONTENEDORES DE GRÁFICAS - BONITOS */
+div[style*="min-width: 400px"] {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05) !important;
+    padding: 20px !important;
+    margin: 10px !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* HOVER EFFECT PARA GRÁFICAS */
+div[style*="min-width: 400px"]:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12), 0 4px 10px rgba(0,0,0,0.08) !important;
+}
+
+/* EFECTO SUTIL EN EL BORDE SUPERIOR */
+div[style*="min-width: 400px"]::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #09a787, #0bc4a1) !important;
+    border-radius: 15px 15px 0 0 !important;
+}
+
+/* CANVAS DE LAS GRÁFICAS */
+canvas {
+    border-radius: 8px !important;
+    background: #fff !important;
+}
+
+/* INFORMACIÓN DE SECCIONES - CONTENEDORES BONITOS */
+#infoSeccionesPrestamos,
+#infoSeccionesPresenciales {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05) !important;
+    padding: 20px !important;
+    margin: 15px 0 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* HOVER EFFECT PARA LOS CONTENEDORES DE INFO */
+#infoSeccionesPrestamos:hover,
+#infoSeccionesPresenciales:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.08) !important;
+}
+
+/* TÍTULOS DE LOS CONTENEDORES */
+#infoSeccionesPrestamos h3,
+#infoSeccionesPresenciales h3 {
+    font-size: 1.1rem !important;
+    margin: 0 0 12px 0 !important;
+    color: #09a787 !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* ICONO ANTES DEL TÍTULO */
+#infoSeccionesPrestamos h3::before {
+    content: "📚" !important;
+    margin-right: 8px !important;
+    font-size: 1.2rem !important;
+}
+
+#infoSeccionesPresenciales h3::before {
+    content: "🏛️" !important;
+    margin-right: 8px !important;
+    font-size: 1.2rem !important;
+}
+
+/* LÍNEAS DE INFORMACIÓN */
+#infoSeccionesPrestamos br + *,
+#infoSeccionesPresenciales br + * {
+    margin-top: 8px !important;
+}
+
+/* TEXTO EN NEGRITAS (NOMBRES DE SECCIONES) */
+#infoSeccionesPrestamos b,
+#infoSeccionesPresenciales b {
+    color: #495057 !important;
+    font-weight: 600 !important;
+    background: #e8f5e8 !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+}
+
+/* NÚMEROS/CANTIDADES */
+#infoSeccionesPrestamos:not(h3),
+#infoSeccionesPresenciales:not(h3) {
+    color: #6c757d !important;
+}
+
+/* MENSAJES DE "NO HAY DATOS" */
+#infoSeccionesPrestamos:contains("No hay"),
+#infoSeccionesPresenciales:contains("No hay") {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%) !important;
+    border-left-color: #ffc107 !important;
+    color: #856404 !important;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    div[style*="min-width: 400px"] {
+        margin: 5px 0 !important;
+        padding: 15px !important;
+    }
+    
+    #infoSeccionesPrestamos,
+    #infoSeccionesPresenciales {
+        padding: 15px !important;
+        margin: 10px 0 !important;
+        font-size: 0.85rem !important;
+    }
+    
+    #infoSeccionesPrestamos h3,
+    #infoSeccionesPresenciales h3 {
+        font-size: 1rem !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+
+    .info-summaries {
+        grid-column: 1 / -1;
+        /* Ocupa todo el ancho de la fila */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .summary-box {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    /* Estilos específicos para los filtros de turnos y carreras */
+    .Filters.by.two {
+        display: flex;
+        gap: 20px;
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        flex-wrap: wrap;
+    }
+
+    .Filters.by.two form {
+        display: flex;
+        flex-direction: column;
+        min-width: 200px;
+        flex: 1;
+    }
+
+    .Filters.by.two label {
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 8px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .Filters.by.two select {
+        padding: 10px 12px;
+        border: 2px solid #e1e8ed;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #34495e;
+        background-color: #ffffff;
+        transition: all 0.3s ease;
+        outline: none;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+
+    .Filters.by.two select:hover {
+        border-color: #09a787;
+        box-shadow: 0 2px 4px rgba(9, 167, 135, 0.1);
+    }
+
+    .Filters.by.two select:focus {
+        border-color: #09a787;
+        box-shadow: 0 0 0 3px rgba(9, 167, 135, 0.1);
+        background-color: #fff;
+    }
+
+    .Filters.by.two select option {
+        padding: 8px 12px;
+        color: #34495e;
+        background-color: #ffffff;
+    }
+
+    .Filters.by.two select option:hover {
+        background-color: #f1f8f6;
+        color: #09a787;
+    }
+
+    .Filters.by.two button[type="submit"] {
+        background: linear-gradient(135deg, #09a787, #07956f);
+        color: #ffffff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        align-self: flex-start;
+        min-width: 120px;
+    }
+
+    .Filters.by.two button[type="submit"]:hover {
+        background: linear-gradient(135deg, #07956f, #065d4f);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(9, 167, 135, 0.3);
+    }
+
+    .Filters.by.two button[type="submit"]:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 6px rgba(9, 167, 135, 0.3);
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+        .Filters.by.two {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .Filters.by.two form {
+            min-width: 100%;
+        }
+
+        .Filters.by.two button[type="submit"] {
+            width: 100%;
+        }
+    }
+
+    /* Animación para cuando se carga la página */
+    .Filters.by.two {
+        animation: slideInUp 0.6s ease-out;
+    }
+
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Estilo para cuando el select está deshabilitado */
+    .Filters.by.two select:disabled {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        border-color: #dee2e6;
+        cursor: not-allowed;
+    }
+
+    /* Hover effect para todo el contenedor de filtros */
+    .Filters.by.two:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.3s ease;
+    }
+
+    /* Indicador visual para campos requeridos */
+    .Filters.by.two label::after {
+        content: "";
+        width: 4px;
+        height: 4px;
+        background-color: #09a787;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+
+    /* Estilo para el foco del keyboard navigation */
+    .Filters.by.two select:focus-visible {
+        outline: 2px solid #09a787;
+        outline-offset: 2px;
+    }

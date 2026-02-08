@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "prueba",
+      "request": "launch",
+      "mainClass": "prueba",
+      
+
+    },
+    {
+      "type": "java",
+      "name": "Ejecutar BarcodeGeneratorApp",
+      "request": "launch",
+      "mainClass": "BarcodeGeneratorApp",
+      "cwd": "${workspaceFolder}/JavaBarcode",
+      "vmArgs": "-cp \"bin;lib/*\""
+    },
+    {
+      "type": "java",
+      "name": "Ejecutar BarcodeSimple",
+      "request": "launch",
+      "mainClass": "BarcodeSimple",
+      "cwd": "${workspaceFolder}/JavaBarcode",
+      "vmArgs": "-cp \"bin;lib/*\""
+    },
+    {
+      "type": "java",
+      "name": "Ejecutar DATABASE",
+      "request": "launch",
+      "mainClass": "DATABASE",
+      "cwd": "${workspaceFolder}/JavaBarcode",
+      "console": "internalConsole",
+      "vmArgs": "-cp \"bin;lib/*\""
+    }
+
+  ]
+}

@@ -1,0 +1,16 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.referencedLibraries": [
+        "JavaBarcode/lib/**/*.jar",
+        "c:\\Users\\luisp\\OneDrive\\Documentos\\Cursos C++, JAVA, JavaScript\\Js\\Database\\lib\\mysql-connector-j-8.4.0.jar",
+        "c:\\Users\\luisp\\OneDrive\\Documentos\\Cursos C++, JAVA, JavaScript\\Js\\Database\\lib\\mysql-connector-j-9.2.0.jar",
+        "c:\\Users\\luisp\\OneDrive\\Documentos\\Cursos C++, JAVA, JavaScript\\Js\\Database\\lib\\mysql-connector-j-9.3.0.jar",
+        "core-3.5.2.jar",
+        "lib/java-dotenv-5.2.2.jar",
+        "lib/java-dotenv-3.1.5.jar",
+        "lib/mssql-jdbc-13.2.0.jre11.jar"
+    ]
+}
+

@@ -1,0 +1,116 @@
+/* CSS COMPACTO PARA EL PANEL DE ADMINISTRADORES - SOLO TAMAÑOS */
+
+/* CONTENEDOR PRINCIPAL */
+.container.main--content {
+    padding: 10px !important;
+}
+
+/* HEADER MÁS COMPACTO */
+.header--wrapper {
+    margin-bottom: 15px !important;
+    padding: 8px 0 !important;
+}
+
+.header--title h2 {
+    font-size: 1.3rem !important;
+    margin: 5px 0 !important;
+}
+
+.header--title span:first-child {
+    font-size: 0.75rem !important;
+    padding: 4px 8px !important;
+    margin-bottom: 5px !important;
+}
+
+.header--title span:nth-child(2) {
+    font-size: 0.9rem !important;
+}
+
+/* SEARCH BOX */
+.search--box input {
+    padding: 6px 10px !important;
+    font-size: 0.85rem !important;
+    height: 32px !important;
+}
+
+/* CONTENEDOR DE LA TABLA */
+.tabular--wrapper {
+    margin-top: 10px !important;
+    padding: 0 !important;
+}
+
+/* TÍTULO DE LA SECCIÓN */
+.tabular--wrapper .main--title,
+.tabular--wrapper h3.main--title {
+    font-size: 1.2rem !important;
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+}
+
+/* BOTONES DE ACCIÓN */
+.tabular--botones {
+    margin: 8px 0 !important;
+    padding: 0 !important;
+}
+
+.tabular--botones button,
+.tabular--botones a {
+    padding: 6px 10px !important;
+    font-size: 0.8rem !important;
+    margin: 2px !important;
+}
+
+/* ALERTAS */
+.alerta {
+    padding: 8px 12px !important;
+    margin: 8px 0 !important;
+    font-size: 0.85rem !important;
+}
+
+/* TABLA - CELDAS MÁS COMPACTAS */
+.table--container table,
+table {
+    width: 100% !important;
+    font-size: 0.75rem !important;
+}
+
+.table--container table th,
+.table--container table td,
+table th,
+table td,
+thead th,
+tbody td {
+    padding: 4px 6px !important;
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+}
+
+/* ENCABEZADOS DE TABLA */
+table thead th {
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+}
+
+/* BOTONES DE ACCIÓN EN TABLA */
+.botones--accion--container button {
+    padding: 3px 6px !important;
+    font-size: 0.7rem !important;
+    margin: 1px !important;
+}
+
+/* ESTILOS PARA ARRASTRE DE COLUMNAS (los que ya tenías) */
+th[draggable="true"] {
+    cursor: grab;
+}
+
+th[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+.drag-hovered {
+    border-right: 2px solid #09a787;
+}
+
+.drag-selected {
+    opacity: 0.7;
+}

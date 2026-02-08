@@ -1,0 +1,6 @@
+[28-Nov-2025 21:05:07 Europe/Berlin] Error en procesar_filtro.php: Unknown column 'u.tipo_usuario' in 'field list'
+[28-Nov-2025 21:05:43 Europe/Berlin] Error en procesar_filtro.php: Unknown column 'u.tipo_usuario' in 'field list'
+[28-Nov-2025 21:10:34 Europe/Berlin] Error en procesar_filtro.php: Unknown column 'p.Matricula' in 'where clause'
+[28-Nov-2025 21:10:36 Europe/Berlin] Error en procesar_filtro.php: Unknown column 'p.Matricula' in 'where clause'
+[28-Nov-2025 21:10:39 Europe/Berlin] Error en procesar_filtro.php: Unknown column 'p.Matricula' in 'where clause'
+[28-Nov-2025 21:14:08 Europe/Berlin] Error en procesar_filtro.php: Unknown column 'p.Matricula' in 'where clause'

@@ -1,0 +1,38 @@
+2025-08-13 20:27:21 - Inicio del proceso de importación
+2025-08-13 20:27:21 - Archivo recibido: ZINEPUREBA.csv (40 bytes)
+2025-08-13 20:27:21 - Contenido del CSV después de limpieza:
+matricula,nombre
+7024,ProfesorTest
+
+2025-08-13 20:27:21 - Transacción iniciada
+2025-08-13 20:27:21 - Encabezados encontrados: Array
+(
+    [0] => matricula
+    [1] => nombre
+)
+
+2025-08-13 20:27:21 - Procesando línea 2: Array
+(
+    [0] => 7024
+    [1] => ProfesorTest
+)
+
+2025-08-13 20:27:21 - Llamando procedimiento con: 7024, ProfesorTest
+2025-08-13 20:27:21 - Resultado del procedimiento: Array
+(
+    [resultado] => Insertado: Profesor ProfesorTest con matrícula 7024
+    [accion] => insertado
+)
+
+2025-08-13 20:27:21 - Registro insertado: 7024
+2025-08-13 20:27:21 - Transacción completada con éxito
+2025-08-13 20:27:21 - Respuesta final: Array
+(
+    [success] => 1
+    [total] => 1
+    [inserted] => 1
+    [skipped] => 0
+    [errors] => 0
+    [message] => Proceso completado. Insertados: 1, Omitidos: 0
+)
+

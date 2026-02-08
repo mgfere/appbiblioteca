@@ -1,0 +1,345 @@
+/* CSS COMPACTO PARA EL PANEL DE LIBROS - VERSIÓN FORZADA */
+
+/* RESETEAR Y FORZAR ESTILOS PARA EL CONTENEDOR PRINCIPAL */
+.card--container,
+div.card--container {
+    margin: 5px 0 10px 0 !important;
+    padding: 8px !important;
+    height: auto !important;
+    min-height: auto !important;
+}
+
+/* TÍTULO "DATOS ACTUALES" MÁS COMPACTO */
+.card--container .main--title,
+.card--container h3.main--title,
+h3.main--title {
+    font-size: 1rem !important;
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+}
+
+/* CONTENEDOR DE TARJETAS - FORZAR FLEXBOX COMPACTO */
+.card--wrapper,
+div.card--wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+}
+
+/* TODAS LAS TARJETAS - ESTILO TARJETA REDONDEADA */
+.payment--card,
+div.payment--card {
+    flex: 1 1 auto !important;
+    min-width: 120px !important;
+    max-width: 200px !important;
+    width: auto !important;
+    padding: 12px 15px !important;
+    margin: 0 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05) !important;
+    height: auto !important;
+    min-height: 70px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* ANULAR ESTILOS INLINE DE ANCHO */
+.payment--card[style*="width"] {
+    width: auto !important;
+    max-width: 220px !important;
+}
+
+/* EFECTO HOVER PARA LAS TARJETAS */
+.payment--card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.08) !important;
+}
+
+/* ENCABEZADO DE CADA TARJETA */
+.card--header,
+div.card--header {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100% !important;
+}
+
+/* CONTENEDOR DE CANTIDAD/VALOR */
+.amount,
+div.amount {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* TÍTULOS DE LAS TARJETAS - MÁS PEQUEÑOS */
+.payment--card .title,
+.payment--card span.title,
+span.title {
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    color: #6c757d !important;
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+    display: block !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* VALORES/NÚMEROS - COMPACTOS PERO VISIBLES */
+.payment--card .amount--value,
+.payment--card span.amount--value,
+span.amount--value {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #09a787 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.1 !important;
+    display: block !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+/* SELECTORES - MÁS COMPACTOS CON ESTILO MODERNO */
+.payment--card select,
+select {
+    /* ✂️ Reducir padding vertical para compactar */
+    padding: 3px 10px !important;
+    
+    /* Mantener un tamaño de fuente legible */
+    font-size: 0.8rem !important;
+    
+    /* Borde más sutil (opcional: puedes usar un color más claro) */
+    border: 1px solid #ced4da !important; 
+    
+    /* Esquinas ligeramente más suaves */
+    border-radius: 6px !important; 
+    
+    /* Espaciado mínimo */
+    margin: 4px 0 0 0 !important;
+    
+    /* ⬇️ Reducir la altura máxima para compactar */
+    max-height: 28px !important; 
+    min-height: 28px !important; 
+    height: 28px !important;
+    
+    /* Estilos de fondo y sombra */
+    background: #fff !important; 
+    box-shadow: 0 0 5px rgba(0,0,0,0.05) !important; /* Sombra más ligera */
+    transition: all 0.2s ease !important;
+}
+
+/* 🌟 EXTRA: Añadir un estilo al hacer foco para un toque moderno */
+.payment--card select:focus,
+select:focus {
+    border-color: #09a787 !important; /* El color principal de tu tema */
+    box-shadow: 0 0 0 3px rgba(9, 167, 135, 0.25) !important;
+    outline: none !important;
+}
+
+/* HOVER Y FOCUS PARA SELECTORES */
+.payment--card select:hover {
+    border-color: #09a787 !important;
+    box-shadow: 0 2px 6px rgba(9, 167, 135, 0.15) !important;
+}
+
+.payment--card select:focus {
+    outline: none !important;
+    border-color: #09a787 !important;
+    box-shadow: 0 0 0 3px rgba(9, 167, 135, 0.2) !important;
+}
+
+/* CONTENEDOR DE LA TABLA - MÁS ESPACIO */
+.tabular--wrapper,
+div.tabular--wrapper {
+    margin-top: 15px !important;
+    padding: 0 !important;
+}
+
+/* TÍTULO DE LA SECCIÓN LIBROS */
+.tabular--wrapper .main--title,
+.tabular--wrapper h3.main--title {
+    font-size: 1.1rem !important;
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+}
+
+/* BOTONES DE ACCIÓN - MÁS COMPACTOS */
+.tabular--botones,
+div.tabular--botones {
+    margin: 8px 0 !important;
+    padding: 0 !important;
+}
+
+.tabular--botones button,
+.tabular--botones a {
+    padding: 6px 10px !important;
+    font-size: 0.8rem !important;
+    margin: 2px !important;
+}
+
+/* TABLA - CELDAS MÁS COMPACTAS */
+.table--container table,
+table {
+    width: 100% !important;
+    font-size: 0.75rem !important;
+}
+
+.table--container table th,
+.table--container table td,
+table th,
+table td,
+thead th,
+tbody td {
+    padding: 4px 6px !important;
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+/* ENCABEZADOS DE TABLA */
+table thead th {
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+}
+
+/* IMÁGENES EN LA TABLA */
+.table--container img,
+table img {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: cover !important;
+}
+
+/* BOTÓN DE COLOR DE SECCIÓN */
+.reservacion--libro {
+    width: 8px !important;
+    height: 8px !important;
+    min-width: 8px !important;
+    min-height: 8px !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+    margin-right: 4px !important;
+    border: none !important;
+}
+
+/* BOTONES DE ACCIÓN EN TABLA */
+.botones--accion--container button {
+    padding: 3px 6px !important;
+    font-size: 0.7rem !important;
+    margin: 1px !important;
+}
+
+/* PAGINACIÓN - MÁS COMPACTA */
+.paginacion_contenedor {
+    margin: 10px 0 !important;
+    padding: 5px 0 !important;
+}
+
+.paginacion_contenedor a {
+    padding: 4px 8px !important;
+    font-size: 0.8rem !important;
+    margin: 0 2px !important;
+}
+
+/* RESPONSIVO - AJUSTES PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 768px) {
+    .card--wrapper {
+        flex-direction: column !important;
+    }
+    
+    .payment--card {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: auto !important;
+    }
+}
+
+/* FORZAR RESET DE MÁRGENES Y PADDINGS PROBLEMÁTICOS */
+.container.main--content > * {
+    margin-top: 0 !important;
+}
+
+.container.main--content .card--container:first-of-type {
+    margin-top: 10px !important;
+}
+
+/* ESTILOS PARA ARRASTRE DE COLUMNAS */
+.drag-selected {
+    opacity: 0.5 !important;
+    background-color: #f0f0f0 !important;
+}
+
+.drag-hovered {
+    background-color: #e8f5e8 !important;
+    border: 2px dashed #09a787 !important;
+}
+
+/* Estilos para el selector de límite */
+.limite-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.limite-selector label {
+    font-weight: 600;
+    color: #333;
+}
+
+.limite-selector select {
+    padding: 8px 15px;
+    border: 2px solid #09a787;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.limite-selector select:hover {
+    border-color: #087d66;
+    box-shadow: 0 2px 5px rgba(9, 167, 135, 0.2);
+}
+
+.limite-selector select:focus {
+    outline: none;
+    border-color: #087d66;
+    box-shadow: 0 0 0 3px rgba(9, 167, 135, 0.1);
+}
+
+.limite-info {
+    margin-left: auto;
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .limite-selector {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .limite-info {
+        margin-left: 0;
+    }
+}
